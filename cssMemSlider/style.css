@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.buttons {
+    display: none;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #202020;
+}
+.slide>img {
+    border-radius: 3%;
+}
+.caption {
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+.dots {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px;
+    margin-top: -20px;
+}
+.dots label {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #778899;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+.dots label:hover{
+    background-color: #FFFFFF;
+}
