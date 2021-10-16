@@ -14,6 +14,7 @@ body {
     height: 100vh;
     width: 40%;
     overflow: hidden;
+    padding-top: 8rem;
 }
 .slides {
     display: flex;
@@ -22,39 +23,70 @@ body {
 .slides img {
     width: 100%;
     transition: all 0.3s ease;
+    border-radius: 3%;
 }
-.slides input {
+body input {
     display: none;
 }
 .dots {
     display: flex;
     justify-content: flex-end;
-    margin: 5px;
+    margin: -0.5rem 0 0.5rem 0.5rem;
 }
 .dots label {
-    height: 15px;
-    width: 15px;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
     background-color: #778899;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 5px;
+    margin: -0.5rem 0 0.5rem 0.5rem;
 }
 .dots label:hover{
     background-color: #FFFFFF;
 }
 .texts {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
     color: #FFFFFF;
+    transition: all 0.3s ease;
 }
-#image1:checked ~ .slide1{
+#image1:checked ~ .container .slider .slides .slide1 {
     margin-left: 0;
 }
-#image2:checked ~ .slide2{
+#image2:checked ~ .container .slider .slides .slide2 {
     margin-left: -100%;
 }
-#image3:checked ~ .slide3{
+#image3:checked ~ .container .slider .slides .slide3 {
     margin-left: -200%;
 }
-#image4:checked ~ .slide4{
+#image4:checked ~ .container .slider .slides .slide4 {
     margin-left: -300%;
+}
+#image1:checked ~ .container .slider .dots .dot1,
+#image2:checked ~ .container .slider .dots .dot2,
+#image3:checked ~ .container .slider .dots .dot3,
+#image4:checked ~ .container .slider .dots .dot4 {
+    background-color: #FFFFFF;
+    border: 0.31rem solid #778899;
+}
+#image1:checked ~ .container .slider .texts .text1,
+#image2:checked ~ .container .slider .texts .text2,
+#image3:checked ~ .container .slider .texts .text3,
+#image4:checked ~ .container .slider .texts .text4 {
+    margin-left: 0;
+    display: flex;
+}
+#image1:checked ~ .container .slider .texts .text2, .text3, .text4 {
+    display: none;
+}
+#image2:checked ~ .container .slider .texts .text1, .text3, .text4 {
+    display: none;
+}
+#image3:checked ~ .container .slider .texts .text1, .text2, .text4 {
+    display: none;
+}
+#image4:checked ~ .container .slider .texts .text1, .text2, .text3 {
+    display: none;
 }
