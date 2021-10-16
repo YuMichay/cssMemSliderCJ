@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +15,9 @@ body {
     height: 100vh;
     width: 40%;
     overflow: hidden;
-    padding-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .slides {
     display: flex;
@@ -32,7 +35,7 @@ body input {
 .dots {
     display: flex;
     justify-content: flex-end;
-    margin: 2rem 0 0.5rem 0.5rem;
+    margin: -1.2rem 0 0.5rem 0.5rem;
 }
 .dots label {
     height: 1rem;
@@ -50,7 +53,9 @@ body input {
     display: flex;
     justify-content: flex-start;
     color: #FFFFFF;
-    margin-top: -1.8rem;
+    font-size: 1rem;
+    margin-top: 2rem;
+    font-family: 'Architects Daughter', cursive;
 }
 .texts span {
     width: 70%;
@@ -164,12 +169,58 @@ body input {
     display: none;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 1440px) {
     .texts {
-        font-size: 0.4rem;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .texts {
+        font-size: 0.5rem;
+    }
+    .texts span {
+        width: 100%;
+    }
+    #image1:checked ~ .container .slider .dots .dot1,
+    #image2:checked ~ .container .slider .dots .dot2,
+    #image3:checked ~ .container .slider .dots .dot3,
+    #image4:checked ~ .container .slider .dots .dot4,
+    #image5:checked ~ .container .slider .dots .dot5 {
+    border: 0.15rem solid #778899;
+    }
+    body {
+        background: radial-gradient(#000000 20%, #272727);
+    }
+}
+@media (max-width: 768px) {
+    .texts {
+        font-size: 0.37rem;
+    }
+    .texts span {
+        width: 100%;
     }
     .slider {
         display: flex;
         flex-direction: column;
+    }
+    .dots {
+        justify-content: center;
+        margin: -1.2rem 0 0 0;
+    }
+    .dots label {
+        margin: 0.1rem;
+        height: 0.5rem;
+        width: 0.5rem;
+    }
+    #image1:checked ~ .container .slider .dots .dot1,
+    #image2:checked ~ .container .slider .dots .dot2,
+    #image3:checked ~ .container .slider .dots .dot3,
+    #image4:checked ~ .container .slider .dots .dot4,
+    #image5:checked ~ .container .slider .dots .dot5 {
+    border: 0.15rem solid #778899;
+    }
+    body {
+        background: radial-gradient(#000000 5%, #272727);
     }
 }
