@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #202020;
+    background: radial-gradient(#000000 30%, #272727);
 }
 .container {
     position: relative;
@@ -22,8 +22,9 @@ body {
 }
 .slides img {
     width: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in;
     border-radius: 3%;
+    box-shadow: 0.5rem white;
 }
 body input {
     display: none;
@@ -31,7 +32,7 @@ body input {
 .dots {
     display: flex;
     justify-content: flex-end;
-    margin: -0.5rem 0 0.5rem 0.5rem;
+    margin: 2rem 0 0.5rem 0.5rem;
 }
 .dots label {
     height: 1rem;
@@ -39,8 +40,8 @@ body input {
     border-radius: 50%;
     background-color: #778899;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin: -0.5rem 0 0.5rem 0.5rem;
+    transition: all 0.5s ease-in;
+    margin-left: 0.5rem;
 }
 .dots label:hover{
     background-color: #FFFFFF;
@@ -48,21 +49,66 @@ body input {
 .texts {
     display: flex;
     justify-content: flex-start;
-    margin-top: 1rem;
     color: #FFFFFF;
-    transition: all 0.3s ease;
+    margin-top: -1.8rem;
+}
+.texts span {
+    width: 70%;
+    animation-name: text-appears;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+@keyframes text-appears {
+    from {color: #272727;}
+    to {color: #FFFFFF;}
+}
+@keyframes images-appears {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    40% {
+        opacity: 0.4;
+    }
+    60% {
+        opacity: 0.6;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 #image1:checked ~ .container .slider .slides .slide1 {
+    display: flex;
     margin-left: 0;
+    animation-name: images-appears;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 #image2:checked ~ .container .slider .slides .slide2 {
-    margin-left: -100%;
+    display: flex;
+    margin-left: 0;
+    animation-name: images-appears;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 #image3:checked ~ .container .slider .slides .slide3 {
-    margin-left: -200%;
+    display: flex;
+    margin-left: 0;
+    animation-name: images-appears;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 #image4:checked ~ .container .slider .slides .slide4 {
-    margin-left: -300%;
+    display: flex;
+    margin-left: 0;
+    animation-name: images-appears;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
 }
 #image1:checked ~ .container .slider .dots .dot1,
 #image2:checked ~ .container .slider .dots .dot2,
@@ -89,4 +135,26 @@ body input {
 }
 #image4:checked ~ .container .slider .texts .text1, .text2, .text3 {
     display: none;
+}
+#image1:checked ~ .container .slider .slides .slide2, .slide3, .slide4 {
+    display: none;
+}
+#image2:checked ~ .container .slider .slides .slide1, .slide3, .slide4 {
+    display: none;
+}
+#image3:checked ~ .container .slider .slides .slide1, .slide2, .slide4 {
+    display: none;
+}
+#image4:checked ~ .container .slider .slides .slide1, .slide2, .slide3 {
+    display: none;
+}
+
+@media (max-width: 320px) {
+    .texts {
+        font-size: 0.4rem;
+    }
+    .slider {
+        display: flex;
+        flex-direction: column;
+    }
 }
