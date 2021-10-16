@@ -3,27 +3,33 @@
     margin: 0;
     padding: 0;
 }
-.buttons {
-    display: none;
-}
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #202020;
 }
-.slide>img {
-    border-radius: 3%;
+.container {
+    position: relative;
+    height: 100vh;
+    width: 40%;
+    overflow: hidden;
 }
-.caption {
-    color: #FFFFFF;
-    margin-top: 20px;
+.slides {
+    display: flex;
+    width: 100%;
+}
+.slides img {
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.slides input {
+    display: none;
 }
 .dots {
     display: flex;
     justify-content: flex-end;
     margin: 5px;
-    margin-top: -20px;
 }
 .dots label {
     height: 15px;
@@ -36,4 +42,19 @@ body {
 }
 .dots label:hover{
     background-color: #FFFFFF;
+}
+.texts {
+    color: #FFFFFF;
+}
+#image1:checked ~ .slide1{
+    margin-left: 0;
+}
+#image2:checked ~ .slide2{
+    margin-left: -100%;
+}
+#image3:checked ~ .slide3{
+    margin-left: -200%;
+}
+#image4:checked ~ .slide4{
+    margin-left: -300%;
 }
